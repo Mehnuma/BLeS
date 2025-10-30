@@ -1,7 +1,7 @@
 # BLeS
 A MATLAB and Octave toolbox for block length selection in block bootstrap.
 
-This toolbox offers the following implementations of block length selection:
+This toolbox offers the following implementations for block length selection:
 1. Hall-Horowitz-Jing (HHJ) method
 2. Bühlmann-Künsch method
 3. Politis-White method
