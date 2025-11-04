@@ -1,4 +1,17 @@
 function opt_l = HHJ_method(ts,l_init,m,statistic,estimator_type,B,theta_hat,threshold,n_iter)
+% This function implements the Hall-Horowitz-Jing (HHJ) block length selection technique, provided by Hall, Horowitz, and Jing (1995).
+% Input:
+%        (1) ts- The time series/correlated series of observations 
+%        (2) l_init- Initial block length for the moving block bootstrap (MBB) estimator
+%        (3) m- Subsample size
+%        (4) statistic- Statistic calculated from the data (mean/median)
+%        (5) estimator_type- Bootstrapped functional
+%        (6) B- Number of bootstrap replications
+%        (7) theta_hat-  "True" value used for the bias and distribution estimation
+%        (8) threshold- Cut-off point needed for the distribution estimation
+%        (9) n_iter- Number of iterations for the HHJ algorithm
+% Output:
+%        (1) opt_l- Optimal block length selected by the HHJ method
 [n,~] = size(ts);
 if strcmp(estimator_type, 'bias') || strcmp(estimator_type, 'variance') 
     k = 3;
@@ -125,4 +138,5 @@ function tao_val = getTao(ts,bl)
     end
     sigma_n_star = sum(big_sum)/(b*bl);
     tao_val = sqrt(sigma_n_star)+(1/n);
+
 end
