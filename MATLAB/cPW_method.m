@@ -1,4 +1,11 @@
 function b_hat = cPW_method(ts,bb_method)
+% This function implements the Politis-White method of block size selection (Politis & White, 2004) with correction (Patton, Politis, & White, 2009)
+% Input:
+%        (1) ts- Observations from a dependent series
+%        (2) bb_method- Selection of the block bootstrap variant ('Circular' and 'Stationary')
+% Output:
+%        (1) b_hat- Optimal block length selected by the cPW method
+
 [N,~] = size(ts);
 
 K_N = max(5, ceil(sqrt(log10(N))));
