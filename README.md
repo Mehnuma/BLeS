@@ -1,5 +1,4 @@
-# BLeS
-A MATLAB and Octave toolbox for block length selection in block bootstrap.
+# BLeS: A MATLAB and Octave Toolbox for Block Length Selection in Block Bootstrap.
 
 This toolbox offers the following implementations for block length selection:
 1. Hall-Horowitz-Jing (HHJ) method
