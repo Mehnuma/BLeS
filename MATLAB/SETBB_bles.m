@@ -8,6 +8,6 @@ l_hat_setbb = SETBB_bles(X,Y,statistic,estimator_type,quantile)
 %                       and for the regular SETBB, sample quantiles or other smooth estimators)
 %        (4) estimator_type- Bootstrapped functional (for extended SETBB is ‘distribution’, 
 %                                                     and for regular SETBB are ‘variance’ and ‘distribution’)
-%        (5) quantile- The quantile of interest for quantile regression estimator
+%        (5) quantile- The quantile of interest for the quantile regression estimator
 % Output:
-%        (1) opt_l- Optimal block length selected by the HHJ method
+%        (1) l_hat_setbb- Optimal block length selected by the SETBB method
