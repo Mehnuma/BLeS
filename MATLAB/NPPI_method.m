@@ -39,3 +39,22 @@ else
     opt_l = round(opt_l);
 end
 end
+
+%% JAB Variance Estimator
+function jab_var = JAB(ts,boot_l,statistic,estimator_type,bl,m,B,theta_hat,threshold,cdf)
+[n,~] = size(ts);
+N = n-bl+1;    % No. of all possible blocks
+M = N-m+1;     % No. of remaining blocks after deleting m blocks
+jab_est = nan(M,1);
+all_blocks = cell(N,1);
+for i=1:N
+    all_blocks{i} = ts(i:i+bl-1);
+end
+parfor i=1:M
+    Ii = (setdiff((1:N),(i:i+m-1)))';
+    remaining_blocks = all_blocks(Ii);
+    jab_est(i) = iJackVal(remaining_blocks,n,bl,statistic,estimator_type,B,theta_hat,threshold,cdf);
+end
+phi_tilde = ((N*boot_l)-((N-m)*jab_est))/m;
+jab_var = (m/(N-m))*mean((phi_tilde-boot_l).^2);
+end
