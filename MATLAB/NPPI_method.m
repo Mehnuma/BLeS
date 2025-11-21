@@ -58,3 +58,70 @@ end
 phi_tilde = ((N*boot_l)-((N-m)*jab_est))/m;
 jab_var = (m/(N-m))*mean((phi_tilde-boot_l).^2);
 end
+
+%% MBB for NPPI
+function boot_stat = MBB_nppi(ts,statistic,estimator_type,bl,B,theta_hat,threshold,cdf)
+[n,~] = size(ts);
+stat = nan(B,1);       
+tao_star = nan(B,1);
+n_block = n-bl+1;
+all_blocks = cell(n_block,1);
+for i=1:n_block
+    all_blocks{i} = ts(i:i+bl-1);
+end
+rng('default')
+parfor j = 1:B
+    ts_star = [];
+    while (length(ts_star)<= n) 
+        I = randi([1,n_block]);
+        ts_star = [ts_star; cell2mat(all_blocks(I))]; 
+    end
+    if(length(ts_star)> n)
+        ts_star = ts_star(1:n,1);
+    end
+    tao_star(j) = getTao(ts_star,bl);
+    if strcmp(statistic, 'mean')
+        stat(j) = mean(ts_star); 
+    elseif strcmp(statistic, 'variance')
+        stat(j) = (std(ts_star))^2;
+    else
+        errordlg('Please supply the supported statistics')
+    end
+end
+if strcmp(estimator_type,'bias')
+    boot_stat = n*(mean(stat)-theta_hat);
+elseif strcmp(estimator_type,'variance')
+    boot_stat = n*(std(stat))^2;
+elseif strcmp(estimator_type,'one-sided')
+    if isempty(threshold)
+        disp('Please supply a threshold value')
+        return
+    else
+        % s_hat = std(stat);
+        scaled_stat = sqrt(n)*(stat-theta_hat)./tao_star;
+        boot_stat = sum(scaled_stat < threshold)/B;
+    end
+elseif strcmp(estimator_type,'two-sided')
+    if isempty(threshold)
+        disp('Please supply a threshold value')
+        return
+    else
+        scaled_stat = sqrt(n)*(abs(stat-theta_hat))./tao_star;
+        boot_stat = sum(scaled_stat < threshold)/B;
+    end
+elseif strcmp(estimator_type,'quantile')
+    if isempty(cdf)
+        disp('Please supply a CDF value')
+    end
+    if isempty(threshold)
+        disp('Please supply a threshold value')
+        return
+    else
+        T1n = sqrt(n)*(stat-theta_hat)./tao_star;
+    end
+    % sorted_stat = sort(T1n);
+    % position = round((n+1)*cdf);
+    % boot_stat = sorted_stat(position);
+    boot_stat = quantile(T1n,cdf);
+end
+end
