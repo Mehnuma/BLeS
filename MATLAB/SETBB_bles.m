@@ -1,4 +1,4 @@
-l_hat_setbb = SETBB_bles(X,Y,statistic,estimator_type,quantile)
+function l_hat_setbb = SETBB_bles(X,Y,statistic,estimator_type,quantile)
 % This function implements block length selection for the smooth extended tapered block bootstrap (SETBB) method, 
 % provided by Gregory et al. (2018).
 % Input:
@@ -11,3 +11,6 @@ l_hat_setbb = SETBB_bles(X,Y,statistic,estimator_type,quantile)
 %        (5) quantile- The quantile of interest for the quantile regression estimator
 % Output:
 %        (1) l_hat_setbb- Optimal block length selected by the SETBB method
+
+
+end
