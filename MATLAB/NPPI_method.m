@@ -125,3 +125,64 @@ elseif strcmp(estimator_type,'quantile')
     boot_stat = quantile(T1n,cdf);
 end
 end
+
+%% i-th Jackknife Estimate
+function val = iJackVal(blocks_left,n_ts,bl,statistic,estimator_type,B,theta_hat,threshold,cdf)
+[n_block,~] = size(blocks_left);
+stat = nan(B,1);
+tao_star = nan(B,1);
+rng('default')
+parfor i = 1:B
+    ts_star = [];
+    while (length(ts_star)<= n_ts)
+        I = randi([1,n_block]);
+        ts_star = [ts_star; cell2mat(blocks_left(I))]; 
+    end
+    if(length(ts_star)> n_ts)
+        ts_star = ts_star(1:n_ts,1);
+    end
+    tao_star(i) = getTao(ts_star,bl);
+    if strcmp(statistic, 'mean')
+        stat(i) = mean(ts_star);
+    elseif strcmp(statistic, 'variance')
+        stat(i) = (std(ts_star))^2;
+    else
+        errordlg('Please supply the supported statistics')
+    end
+end
+if strcmp(estimator_type,'bias')
+    val = n_ts*(mean(stat)-theta_hat);
+elseif strcmp(estimator_type,'variance')
+    val = n_ts*(std(stat))^2;
+elseif strcmp(estimator_type,'one-sided')
+    if isempty(threshold)
+        disp('Please supply a threshold value')
+        return
+    else
+        scaled_stat = sqrt(n_ts)*(stat-theta_hat)./tao_star;
+        val = sum(scaled_stat < threshold)/B;
+    end
+elseif strcmp(estimator_type,'two-sided')
+    if isempty(threshold)
+        disp('Please supply a threshold value')
+        return
+    else
+        scaled_stat = sqrt(n_ts)*(abs(stat-theta_hat))./tao_star;
+        val = sum(scaled_stat < threshold)/B;
+    end
+elseif strcmp(estimator_type,'quantile')
+    if isempty(cdf)
+        disp('Please supply a CDF value')
+    end
+    if isempty(threshold)
+        disp('Please supply a threshold value')
+        return
+    else
+        T1n = sqrt(n_ts)*(stat-theta_hat)./tao_star;
+    end
+    % sorted_stat = sort(T1n);
+    % position = round((n_ts+1)*cdf);
+    % val = sorted_stat(position);
+    val = quantile(T1n,cdf);
+end
+end
