@@ -25,8 +25,11 @@ G_hat(k+1) = lambda(k/M).*k.*R_hat(ts,k);
 g_hat0(k+1) = lambda(k/M).*R_hat(ts,k);
 end
 
-G_hat = G_hat(1)+2*sum(G_hat(2:end));
-g_hat0 = g_hat0(1)+2*sum(g_hat0(2:end));
+%G_hat = G_hat(1)+2*sum(G_hat(2:end));
+%g_hat0 = g_hat0(1)+2*sum(g_hat0(2:end));
+
+G_hat = sum(G_hat);
+g_hat0 = sum(g_hat0);
 
 if strcmp(bb_method,'circularBB')    
     D_CB = 4/3*(g_hat0)^2;
