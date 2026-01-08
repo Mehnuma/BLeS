@@ -1,0 +1,9 @@
+** In this folder, you will find results on replication from the following sources:
+1. Hall-Horowitz-Jing (HHJ) method
+2. Bühlmann-Künsch (BK) method
+3. Corrected Politis-White (cPW) method
+4. Nonparametric plugin (NPPI) method by Lahiri et al.
+5. Methods for tapered block bootstrap variants:
+     (a) Original tapered block bootstrap (TBB) by Paparoditis-Politis
+     (b) Extended tapered block bootstrap (ETBB) by Shao
+     (c) Smooth extended TBB (SETBB) by Gregory et al. 
