@@ -10,4 +10,4 @@ We present a MATLAB toolbox called BLeS for selecting block length, the main tun
      (b) Extended tapered block bootstrap (ETBB) by Shao
      (c) Smooth extended TBB (SETBB) by Gregory et al. 
 
-This toolbox has been tested using different examples from published articles, and a simulation study illustrating its range and functionality has been presented. BLeS is also supported in Octave.
+This toolbox has been tested using different examples from published articles, and a simulation study illustrating its range and functionality has been presented. The replication scripts are available in the source folder, and the generated figures can be found in the Results folder. BLeS is also supported in Octave.
