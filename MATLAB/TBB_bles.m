@@ -71,6 +71,8 @@ function ta = acf(y,p)
 % ACF - Compute Autocorrelations Through p Lags
 % >> myacf = acf(y,p) 
 %
+% Author: Calvin Price (2026). 
+% Source: Autocorrelation Function (ACF) (https://www.mathworks.com/matlabcentral/fileexchange/30540-autocorrelation-function-acf), MATLAB Central File Exchange.
 % Inputs:
 % y - series to compute acf for, nx1 column vector
 % p - total number of lags, 1x1 integer
