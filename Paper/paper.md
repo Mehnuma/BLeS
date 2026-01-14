@@ -34,6 +34,7 @@ We present a MATLAB toolbox called BLeS for selecting block length, the primary 
 # State of the Field 
 
 # Software Design
+The toolbox is designed as follows.
 
 # Research Impact Statement
 
