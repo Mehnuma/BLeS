@@ -84,7 +84,7 @@ BB = Block bootstrap; CBB = Circular BB; SBB = Stationary BB; MBB = Moving BB; S
 The toolbox is designed as follows.
 
 # Research Impact Statement
-Given that the resources for block length selection methods are not available in many cases, and the available ones are scattered in a manner, we propose a MATLAB and Octave toolbox called \pkg{BLeS} that contains the implementations of all the aforementioned methods in one place. The unique characteristics of this toolbox are that it:
+Given that the resources for block length selection methods are not available in many cases, and the available ones are scattered in a manner, we propose a MATLAB and Octave toolbox called BLeS that contains the implementations of all the aforementioned methods in one place. The unique characteristics of this toolbox are that it:
 (1) provides a complete implementation scheme for the first four block length selection methods.
 (2) offers ease-of-use through only one line of code and the opportunity to customize the inputs.
 (3) contains both MATLA Band Octave implementations to provide more flexibility to the users.
