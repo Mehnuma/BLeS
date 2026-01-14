@@ -41,3 +41,4 @@ The toolbox is designed as follows.
 # References
 
 # Appendix
+![Hall-Horowitz-Jing (HHJ) Method of Block Length Selection.\label{fig:hhj}](bles_hhj.pdf)
