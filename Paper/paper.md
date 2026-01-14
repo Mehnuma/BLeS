@@ -50,10 +50,62 @@ The available implementations are presented below:
 | `OBL`                        | @james2022        | 2022 | Calculates optimal block length for NBB, MBB, CBB, TMBB, and TCBB                        | R                 | [OBL package](https://CRAN.R-project.org/package=OBL)                                                              |
 | `blocklength`                | @stashevsky2025   | 2025 | Implements HHJ, cPW, and NPPI                                                            | R                 | [blocklength package](https://cran.r-project.org/package=blocklength)                                              |
 | `boodd`                      | @bertail2025      | 2025 | Calculates optimal block length for SB and BD                                            | R                 | [boodd package](https://cran.r-project.org/web/packages/boodd/index.html)                                          |
-| `BLeS`                       | @tabassum2026     | 2026 | Implements HHJ, BK, cPW, NPPI, TBB/ETBB, SETBB/modified SETBB, and BD                    | MATLAB and Octave | [BLeS Toolbox](https://github.com/Mehnuma/BLeS)                                                                    |
+| `BLeS`                       | @tabassum2026b    | 2026 | Implements HHJ, BK, cPW, NPPI, TBB/ETBB, SETBB/modified SETBB, and BD                    | MATLAB and Octave | [BLeS Toolbox](https://github.com/Mehnuma/BLeS)                                                                    |
 
 Notes:
 BB: Block bootstrap; CBB: Circular BB; SBB: Stationary BB; MBB: Moving BB; SMBB: Smooth MBB; ETBB: Extended tapered BB; SETBB: Smooth ETBB; HHJ: Hall–Horowitz–Jing; cPW: corrected Politis–White; NPPI: Nonparametric plug-in; NBB: Non-overlapping BB; TMBB: Tapered MBB; TCBB: Tapered CBB; TBB: Tapered BB.
+
+
+
+<!-- : Overview of available software implementations related to block length selection {#tbl:software}
+| Package / Function(s)        | Author(s)  | Year | Capabilities                                                                  | Environment       | Source                                                                                                             |
+| :--------------------------- | :--------- | :--: | :---------------------------------------------------------------------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------- |
+| `opt_block_length_REV_dec07` | Patton     | 2007 | Block length selector for CBB and SBB                                         | MATLAB            | [Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)                                       |
+| `b.star`                     | Hayfield   | 2008 | Block length selection for CBB and SBB                                        | R                 | [np package](https://CRAN.R-project.org/package=np)                                                                |
+| `getNPPIblksizesQR`          | Gregory    | 2022 | Block length selection for MBB, SMBB, ETBB, and SETBB for quantile regression | R                 | [QregBB package](https://cran.r-project.org/package=QregBB)                                                        |
+| `optimal_block_length`       | Nowotny    | 2019 | Block length selectors for CBB and SBB                                        | Python            | [recombinator package](https://github.com/InvestmentSystems/recombinator)                                          |
+| `optimal_block_length`       | Sheppard   | 2021 | Block length selectors for CBB and SBB                                        | Python            | [arch package](https://arch.readthedocs.io/en/latest/bootstrap/generated/arch.bootstrap.optimal_block_length.html) |
+| `blocklength`                | Stashevsky | 2022 | Implements HHJ, cPW, and NPPI                                                 | R                 | [blocklength package](https://cran.r-project.org/package=blocklength)                                              |
+| `OBL`                        | James      | 2022 | Optimal block length for NBB, MBB, CBB, TMBB, and TCBB                        | R                 | [OBL package](https://CRAN.R-project.org/package=OBL)                                                              |
+| `BLeS`                       | Tabassum   | 2025 | HHJ, BK, cPW, NPPI, TBB/ETBB, SETBB/modified SETBB, and BD                    | MATLAB and Octave | [BLeS Toolbox](https://faculty.sites.iastate.edu/kbrabant/software)                                                |
+
+Notes:
+BB = Block bootstrap; CBB = Circular BB; SBB = Stationary BB; MBB = Moving BB; SMBB = Smooth MBB; ETBB = Extended tapered BB; SETBB = Smooth ETBB; HHJ = Hall–Horowitz–Jing; cPW = corrected Politis–White; NPPI = Nonparametric plug-in; NBB = Non-overlapping BB; TMBB = Tapered MBB; TCBB = Tapered CBB; TBB = Tapered BB. -->
+
+<!-- ```{=latex}
+\begin{table}[!h]
+    \centering    
+    \caption{Overview of available software implementations related to block length selection} \label{table:software}
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{>{\centering}p{0.25\linewidth}
+      >{\centering}p{0.12\linewidth}
+      >{\centering}p{0.12\linewidth}
+      >{\centering}p{0.12\linewidth}
+      >{\centering}p{0.12\linewidth}
+      >{\centering\arraybackslash}p{0.12\linewidth}}
+    \hline
+    \textbf{Package/Function(s)} & \textbf{Author(s)} & \textbf{Year} & \textbf{Capabilities} & \textbf{Environment} & \textbf{Source} \\ \hline
+
+    {\fontfamily{Couriernew}\selectfont opt\_block\_length\_REV\_dec07} &~\citet{patton2007} & 2007 & Block length selector for CBB and SBB & {\fontfamily{Couriernew}\selectfont MATLAB} &\href{https://public.econ.duke.edu/~ap172/code.html}{Andrew Patton's Matlab Page}\\
+
+    {\fontfamily{Couriernew}\selectfont b.star} &~\citet{hayfield2008} & 2008 & Implements block length selection for CBB and SBB & {\fontfamily{Couriernew}\selectfont R} &\href{https://CRAN.R-project.org/package=np}{np package}\\
+        
+    {\fontfamily{Couriernew}\selectfont getNPPIblksizesQR} &~\citet{gregory2022} & 2022 & Implements block length selection for MBB, SMBB, ETBB, and SETBB for quantile regression & {\fontfamily{Couriernew}\selectfont R} &\href{https://cran.r-project.org/package=QregBB}{QregBB package}\\
+
+    {\fontfamily{Couriernew}\selectfont optimal\_block\_length} &~\citet{nowotny2019} & 2019 & Block length selectors for CBB and SBB & {\fontfamily{Couriernew}\selectfont Python} &\href{https://github.com/InvestmentSystems/recombinator}{recombinator package} \\
+
+    {\fontfamily{Couriernew}\selectfont optimal\_block\_length} &~\citet{sheppard2021} & 2021 & Block length selectors for CBB and SBB & {\fontfamily{Couriernew}\selectfont Python} &\href{https://arch.readthedocs.io/en/latest/bootstrap/generated/arch.bootstrap.optimal_block_length.html}{arch package} \\
+    
+    {\fontfamily{Couriernew}\selectfont blocklength} &~\citet{stashevsky2022} & 2022 & Implements HHJ, cPW, and NPPI & {\fontfamily{Couriernew}\selectfont R} &\href{https://cran.r-project.org/package=blocklength}{blocklength package}  \\
+
+    {\fontfamily{Couriernew}\selectfont OBL} &~\citet{james2022} & 2022 & Calculates optimal block length for NBB, MBB, CBB, TMBB, and TCBB & {\fontfamily{Couriernew}\selectfont R} &\href{https://CRAN.R-project.org/package=OBL}{OBL package}  \\
+    
+    {\fontfamily{Couriernew}\selectfont BLeS} &~\citet{tabassum2025} & 2025 & Implements HHJ, BK, cPW, NPPI, TBB/ETBB, SETBB/modified SETBB, and BD & {\fontfamily{Couriernew}\selectfont MATLAB and Octave} &\href{https://github.com/Mehnuma/BLeS}{BLeS Toolbox}  \\ \hline
+    \end{tabular}
+    }
+    \footnotesize{BB: Block bootstrap, CBB: Circular BB, SBB: Stationary BB, MBB: Moving BB, SMBB: Smooth MBB, ETBB: Extended tapered BB, SETBB: Smooth ETBB, HHJ: Hall-Horowitz-Jing, cPW: corrected Politis-White, NPPI: Nonparametric plug-in, NBB: Non-overlapping BB, TMBB: Tapered MBB, TCBB: Tapered CBB, TBB: Tapered BB.}
+\end{table}
+``` -->
 
 # Software Design
 The toolbox is designed as follows. It includes the implements for the HHJ method (\autoref{fig:hhj}), BK method (\autoref{fig:bk}), cPW method (\autoref{fig:cpw}), NPPI method (\autoref{fig:nppi}), the block length selectors for the tapered block bootstrap variants, and the BD method. 
