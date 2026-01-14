@@ -31,7 +31,9 @@ We present a MATLAB toolbox called BLeS for selecting block length, the primary 
 
 # Statement of Need
 Bootstrapping is a resampling method used to approximate properties of an estimator, such as bias, variance, and its distribution. Standard bootstrap assumes independent and identically distributed (IID) data [@efron1993}, and hence it is unsuitable for correlated observations [@kunsch1989}. To handle dependence, block bootstrap resamples blocks of consecutive observations from a correlated series instead of individual IID points[@hall1995}. Block bootstrap has several variants—fixed, moving/overlapping, circular, stationary, etc.—but in all cases the key issue is choosing the block length[@lahiri1999}, which largely determines performance. Thus, block length is the main tuning parameter and its selection is an important research problem.
+
 There exist several mean-squared error (MSE)-optimal block length in some cases; however, they cannot be obtained in practice due to including population parameters. As a result, the available literature focuses on empirical block length choices for a certain block bootstrap variant. Pioneering articles include @hall1995, @buhlmann1999, @paparoditis 2002, @politis2004, @lahiri2007,  @shao2010, @gregory2018, @bertail2024. For a detailed overview and their comparative capabilities, we refer the readers to @tabassum2026. 
+
 Because these methods have been developed for practical purposes, their implementations and the ease-of-use is of prime importance. Although some free-source codes for block bootstrap can be found (see [here](https://github.com/lamferzon/bboot) for bboot in R, and [here](https://www.mathworks.com/matlabcentral/fileexchange/53701-bootstrapping-time-series) for some MATLAB codes), there are only a few sources that implement block length selection algorithms. We have identified some sources that, in some capacity, have implemented some of the methods available in the literature. The most frequently implemented ones are by @politis2004 and @hall1995, while there are almost nonexistent sources for the other methods, to the best of our knowledge
 
 
@@ -52,17 +54,6 @@ The available implementations are presented below:
 Notes:
 BB: Block bootstrap; CBB: Circular BB; SBB: Stationary BB; MBB: Moving BB; SMBB: Smooth MBB; ETBB: Extended tapered BB; SETBB: Smooth ETBB; HHJ: Hall–Horowitz–Jing; cPW: corrected Politis–White; NPPI: Nonparametric plug-in; NBB: Non-overlapping BB; TMBB: Tapered MBB; TCBB: Tapered CBB; TBB: Tapered BB.
 
-
-| Package / Function(s)        | Author(s)  | Year | Capabilities                                                                | Environment    | Source                                                                                                     |
-| ---------------------------- | ---------- | ---- | --------------------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------- |
-| `opt_block_length_REV_dec07` | Patton     | 2007 | Block length selector for CBB and SBB                                       | MATLAB         | [Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)                               |
-| `b.star`                     | Hayfield   | 2008 | Block length selection for CBB and SBB                                      | R              | [np](https://CRAN.R-project.org/package=np)                                                                |
-| `getNPPIblksizesQR`          | Gregory    | 2022 | Block length selection for MBB, SMBB, ETBB, and SETBB (quantile regression) | R              | [QregBB](https://cran.r-project.org/package=QregBB)                                                        |
-| `optimal_block_length`       | Nowotny    | 2019 | Block length selectors for CBB and SBB                                      | Python         | [recombinator](https://github.com/InvestmentSystems/recombinator)                                          |
-| `optimal_block_length`       | Sheppard   | 2021 | Block length selectors for CBB and SBB                                      | Python         | [arch](https://arch.readthedocs.io/en/latest/bootstrap/generated/arch.bootstrap.optimal_block_length.html) |
-| `blocklength`                | Stashevsky | 2022 | Implements HHJ, cPW, and NPPI                                               | R              | [blocklength](https://cran.r-project.org/package=blocklength)                                              |
-| `OBL`                        | James      | 2022 | Optimal block length for NBB, MBB, CBB, TMBB, and TCBB                      | R              | [OBL](https://CRAN.R-project.org/package=OBL)                                                              |
-| `BLeS`                       | Tabassum   | 2025 | HHJ, BK, cPW, NPPI, TBB/ETBB, SETBB/modified SETBB, and BD                  | MATLAB, Octave | [BLeS Toolbox](https://faculty.sites.iastate.edu/kbrabant/software)                                        |
 
 
 : Overview of available software implementations related to block length selection {#tbl:software}
