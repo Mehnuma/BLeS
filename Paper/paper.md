@@ -72,7 +72,7 @@ BB: Block bootstrap; CBB: Circular BB; SBB: Stationary BB; MBB: Moving BB; SMBB:
     \hline
     \textbf{Package/Function(s)} & \textbf{Author(s)} & \textbf{Year} & \textbf{Capabilities} & \textbf{Environment} & \textbf{Source} \\ \hline
 
-    {\fontfamily{Couriernew}\selectfont opt\_block\_length\_REV\_dec07} &~\citet{patton2007} & 2007 & Block length selector for CBB and SBB & {\fontfamily{Couriernew}\selectfont MATLAB} &\href{https://public.econ.duke.edu/~ap172/code.html}{Andrew Patton's Matlab Page}\\
+    {\fontfamily{Couriernew}\selectfont opt_block_length_REV_dec07} &~\citet{patton2007} & 2007 & Block length selector for CBB and SBB & {\fontfamily{Couriernew}\selectfont MATLAB} &\href{https://public.econ.duke.edu/~ap172/code.html}{Andrew Patton's Matlab Page}\\
 
     {\fontfamily{Couriernew}\selectfont b.star} &~\citet{hayfield2008} & 2008 & Implements block length selection for CBB and SBB & {\fontfamily{Couriernew}\selectfont R} &\href{https://CRAN.R-project.org/package=np}{np package}\\
         
