@@ -14,7 +14,7 @@ function opt_l = HHJ_method(ts,l_init,m,statistic,estimator_type,B,theta_hat,thr
 %        (1) opt_l- Optimal block length selected by the HHJ method
 
 [n,~] = size(ts);
-% --- convert estimator_type and statistic strings to numeric flags once ---
+% --- convert estimator_type and statistic strings to numeric flags once --- (ChatGPT was used for the next three chunks)
 switch lower(estimator_type)
     case 'bias',       est_flag = 1;
     case 'variance',   est_flag = 2;
