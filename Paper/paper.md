@@ -42,7 +42,7 @@ The available implementations are presented in \autoref{tab:overview}.
 Table: Overview of available software implementations related to block length selection. \label{tab:overview}
 
 | Package / Function(s)        | Author(s)         | Capabilities         | Environment   | Source   |
-|:--------------------------------------------------------------:|:----------------------------------------:| ------------------------------------------- |:------------------------:|:----------------------------:|
+|:-------------------------------------------------------------------:|:----------------------------------------:| ------------------------------------------- |:------------------------:|:----------------------------:|
 | `opt_block_length_REV_dec07` | @patton2007 | Block length selector for CBB and SBB   | MATLAB | [Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)                                       |
 | `b.star`                     | @hayfield2008 | Block length selector for CBB and SBB   | R   | [np package](https://CRAN.R-project.org/package=np) |
 | `getNPPIblksizesQR`          | @gregory2022  | Block length selector MBB, SMBB, ETBB, and SETBB for quantile regression | R  | [QregBB package](https://cran.r-project.org/package=QregBB)                                                        |
