@@ -23,9 +23,7 @@ affiliations:
    index: 2
 date: 9 January, 2026
 bibliography: paper.bib
-header-includes:
-  - \usepackage{caption}
-  - \usepackage{tabular}
+
 ---
 
 # Summary
