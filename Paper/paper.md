@@ -41,17 +41,17 @@ The available implementations are presented in \autoref{tab:overview}.
 
 Table: Overview of available software implementations related to block length selection. \label{tab:overview}
 
-| Package / Function(s)        | Author(s)         | Year | Capabilities         | Environment   | Source   |
-| -------------------------------------------------------------- | ---------------------------------------- | ----------- | ------------------------------------------- | ------------------------ | ---------------------------- |
-| `opt_block_length_REV_dec07` | @patton2007       | 2007 | Block length selector for CBB and SBB                                                    | MATLAB            | [Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)                                       |
-| `b.star`                     | @hayfield2008     | 2008 | Implements block length selection for CBB and SBB                                        | R                 | [np package](https://CRAN.R-project.org/package=np)                                                                |
-| `getNPPIblksizesQR`          | @gregory2022      | 2022 | Implements block length selection for MBB, SMBB, ETBB, and SETBB for quantile regression | R                 | [QregBB package](https://cran.r-project.org/package=QregBB)                                                        |
-| `optimal_block_length`       | @nowotny2019      | 2019 | Block length selectors for CBB and SBB                                                   | Python            | [recombinator package](https://github.com/InvestmentSystems/recombinator)                                          |
-| `optimal_block_length`       | @sheppard2021     | 2021 | Block length selectors for CBB and SBB                                                   | Python            | [arch package](https://arch.readthedocs.io/en/latest/bootstrap/generated/arch.bootstrap.optimal_block_length.html) |
-| `OBL`                        | @james2022        | 2022 | Calculates optimal block length for NBB, MBB, CBB, TMBB, and TCBB                        | R                 | [OBL package](https://CRAN.R-project.org/package=OBL)                                                              |
-| `blocklength`                | @stashevsky2025   | 2025 | Implements HHJ, cPW, and NPPI                                                            | R                 | [blocklength package](https://cran.r-project.org/package=blocklength)                                              |
-| `boodd`                      | @bertail2025      | 2025 | Calculates optimal block length for SB and BD                                            | R                 | [boodd package](https://cran.r-project.org/web/packages/boodd/index.html)                                          |
-| `BLeS`                       | @tabassum2026b    | 2026 | Implements HHJ, BK, cPW, NPPI, TBB/ETBB, modified SETBB, and BD                          | MATLAB and Octave | [BLeS Toolbox](https://github.com/Mehnuma/BLeS)                                                                    |
+| Package / Function(s)        | Author(s)         | Capabilities         | Environment   | Source   |
+|:--------------------------------------------------------------:|:----------------------------------------:| ------------------------------------------- |:------------------------:|:----------------------------:|
+| `opt_block_length_REV_dec07` | @patton2007 | Block length selector for CBB and SBB   | MATLAB | [Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)                                       |
+| `b.star`                     | @hayfield2008 | Block length selector for CBB and SBB   | R   | [np package](https://CRAN.R-project.org/package=np) |
+| `getNPPIblksizesQR`          | @gregory2022  | Block length selector MBB, SMBB, ETBB, and SETBB for quantile regression | R  | [QregBB package](https://cran.r-project.org/package=QregBB)                                                        |
+| `optimal_block_length`       | @nowotny2019  | Block length selector for CBB and SBB | Python | [recombinator package](https://github.com/InvestmentSystems/recombinator)                                          |
+| `optimal_block_length`       | @sheppard2021  | Block length selectors for CBB and SBB  | Python | [arch package](https://arch.readthedocs.io/en/latest/bootstrap/generated/arch.bootstrap.optimal_block_length.html) |
+| `OBL`                        | @james2022     | Block length selector for NBB, MBB, CBB, TMBB, and TCBB | R | [OBL package](https://CRAN.R-project.org/package=OBL)                                                              |
+| `blocklength`                | @stashevsky2025 | Block length selector for HHJ, cPW, and NPPI  | R  | [blocklength package](https://cran.r-project.org/package=blocklength)                                              |
+| `boodd`                      | @bertail2025  | Block length selector for BD    | R  | [boodd package](https://cran.r-project.org/web/packages/boodd/index.html)                                          |
+| `BLeS`                       | @tabassum2026b | Block length selector for HHJ, BK, cPW, NPPI, TBB/ETBB, modified SETBB, and BD  | MATLAB and Octave | [BLeS Toolbox](https://github.com/Mehnuma/BLeS)                                                                    |
 
 Notes:
 BB: Block bootstrap; CBB: Circular BB; SBB: Stationary BB; MBB: Moving BB; SMBB: Smooth MBB; ETBB: Extended tapered BB; SETBB: Smooth ETBB; HHJ: Hall–Horowitz–Jing; cPW: corrected Politis–White; NPPI: Nonparametric plug-in; NBB: Non-overlapping BB; TMBB: Tapered MBB; TCBB: Tapered CBB; TBB: Tapered BB.
