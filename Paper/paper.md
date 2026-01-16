@@ -37,12 +37,12 @@ There exist several mean-squared error (MSE)-optimal block lengths in some cases
 Because these methods have been developed for practical purposes, their implementation and ease of use are of prime importance. Although some free-source codes for block bootstrap can be found (see [here](https://github.com/lamferzon/bboot) for bboot in R, and [here](https://www.mathworks.com/matlabcentral/fileexchange/53701-bootstrapping-time-series) for some MATLAB codes), there are only a few sources that implement block length selection algorithms. We have identified some sources that, in some capacity, have implemented some of the methods available in the literature. The most frequently implemented ones are by @politis2004 and @hall1995, while there are almost nonexistent sources for the other methods, to the best of our knowledge. Therefore, there is a need for an extensive toolbox/package that offers implementations for the available and widely used block length selectors. 
 
 # State of the Field 
-The available implementations are presented in Table \autoref{tab:overview}. Also see Table \autoref{tab:software}. Table href="tab:software"
+The available implementations are presented in \autoref{tab:overview}. 
 
 Table: Overview of available software implementations related to block length selection. \label{tab:overview}
 
 | Package / Function(s)        | Author(s)         | Year | Capabilities                                                                             | Environment       | Source                                                                                                             |
-| ---------------------------- | ----------------- | ---- | ---------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ---------------------------- | ----------------- | ---- | ---------------------------------------------------------------------------------------- | ----------------- | ---------------------------- |
 | `opt_block_length_REV_dec07` | @patton2007       | 2007 | Block length selector for CBB and SBB                                                    | MATLAB            | [Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)                                       |
 | `b.star`                     | @hayfield2008     | 2008 | Implements block length selection for CBB and SBB                                        | R                 | [np package](https://CRAN.R-project.org/package=np)                                                                |
 | `getNPPIblksizesQR`          | @gregory2022      | 2022 | Implements block length selection for MBB, SMBB, ETBB, and SETBB for quantile regression | R                 | [QregBB package](https://cran.r-project.org/package=QregBB)                                                        |
@@ -55,58 +55,6 @@ Table: Overview of available software implementations related to block length se
 
 Notes:
 BB: Block bootstrap; CBB: Circular BB; SBB: Stationary BB; MBB: Moving BB; SMBB: Smooth MBB; ETBB: Extended tapered BB; SETBB: Smooth ETBB; HHJ: Hall–Horowitz–Jing; cPW: corrected Politis–White; NPPI: Nonparametric plug-in; NBB: Non-overlapping BB; TMBB: Tapered MBB; TCBB: Tapered CBB; TBB: Tapered BB.
-
-`BLeS` includes the implements for the HHJ method (\autoref{fig:hhj}), BK method (\autoref{fig:bk}), cPW method (\autoref{fig:cpw}), NPPI method (\autoref{fig:nppi}), the block length selectors for the tapered block bootstrap variants, and the BD method. 
-
-
-<table align="center">>
-<caption id="tab:software">
-    Overview of available software implementations related to block length selection.
-  </caption>
-<thead>
-<tr>
-<th>Package/Function(s)</th> <th>Author(s)</th> <th>Year</th> <th> Capabilities</th> <th>Environment</th> <th> Source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>`opt_block_length_REV_dec07`</td> <td>@patton2007</td> <td>2007</td> <td>Block length selector for CBB and SBB</td> <td>MATLAB</td> <td>[Andrew Patton's Matlab Page](https://public.econ.duke.edu/~ap172/code.html)   </td> 
-</tr>
-
-<tr>
-<td>`b.star`</td> <td>@hayfield2008</td> <td>2008</td> <td>Implements block length selection for CBB and SBB</td> <td>R</td> <td>[np package](https://CRAN.R-project.org/package=np)</td> 
-</tr>
-
-<tr>
-<td>`optimal_block_length`</td> <td>@nowotny2019</td> <td>2019</td> <td>Block length selectors for CBB and SBB</td> <td>Python</td> <td>[recombinator package](https://github.com/InvestmentSystems/recombinator)</td> 
-</tr>
-
-<tr>
-<td>`optimal_block_length`</td> <td>@sheppard2021</td> <td>2021</td> <td>Block length selectors for CBB and SBB</td> <td>Python</td> <td>[arch package](https://arch.readthedocs.io/en/latest/bootstrap/generated/arch.bootstrap.optimal_block_length.html)</td> 
-</tr>
-
-<tr>
-<td>`getNPPIblksizesQR`</td> <td>@gregory2022</td> <td>2022</td> <td>Implements block length selection for MBB, SMBB, ETBB, and SETBB for quantile regression</td> <td>R</td> <td>[QregBB package](https://cran.r-project.org/package=QregBB)</td> 
-</tr>
-
-<tr>
-<td>`OBL`</td> <td>@james2022</td> <td>2022</td> <td>Calculates optimal block length for NBB, MBB, CBB, TMBB, and TCBB</td> <td>R</td> <td>[OBL package](https://CRAN.R-project.org/package=OBL)</td> 
-</tr>
-
-<tr>
-<td>`blocklength`</td> <td>@stashevsky2025</td> <td>2025</td> <td>Implements HHJ, cPW, and NPPI</td> <td>R</td> <td>[blocklength package](https://cran.r-project.org/package=blocklength)</td> 
-</tr>
-
-<tr>
-<td>`boodd`</td> <td>@bertail2025</td> <td>2025</td> <td>Calculates optimal block length for BD</td> <td>R</td> <td>[boodd package](https://cran.r-project.org/web/packages/boodd/index.html)</td> 
-</tr>
-
-<tr>
-<td>`BLeS`</td> <td>@tabassum2026b</td> <td>2026</td> <td>Implements HHJ, BK, cPW, NPPI, TBB/ETBB, modified SETBB, and BD</td> <td>MATLAB and Octave</td> <td>[BLeS Toolbox](https://github.com/Mehnuma/BLeS)</td> 
-</tr>
-</tbody>
-</table>
-
 
 `BLeS` includes the implements for the HHJ method (\autoref{fig:hhj}), BK method (\autoref{fig:bk}), cPW method (\autoref{fig:cpw}), NPPI method (\autoref{fig:nppi}), the block length selectors for the tapered block bootstrap variants, and the BD method. 
 
