@@ -38,7 +38,7 @@ There exist several mean-squared error (MSE)-optimal block lengths in some cases
 Because these methods have been developed for practical purposes, their implementation and ease of use are of prime importance. Although some free-source codes for block bootstrap can be found (see [here](https://github.com/lamferzon/bboot) for bboot in R, and [here](https://www.mathworks.com/matlabcentral/fileexchange/53701-bootstrapping-time-series) for some MATLAB codes), there are only a few sources that implement block length selection algorithms. We have identified some sources that, in some capacity, have implemented some of the methods available in the literature. The most frequently implemented ones are by @politis2004 and @hall1995, while there are almost nonexistent sources for the other methods, to the best of our knowledge. Therefore, there is a need for an extensive toolbox/package that offers implementations for the available and widely used block length selectors. 
 
 # State of the Field 
-The available implementations are presented in \autoref{tab:overview}. 
+The available block length selectors are presented in \autoref{tab:overview}. 
 
 Table: Overview of available software implementations related to block length selection. \label{tab:overview}
 
@@ -87,6 +87,6 @@ In this section, we present the graphical representations of the block length se
 
 ![Block length selection for tapered block bootstrap (TBB), and its extended version (ETBB).\label{fig:tbb}](bles_tbb.pdf)
 
-![Block length selection for smooth extended tapered block bootstrap (SETBB).\label{fig:tbb}](bles_setbb.pdf)
+![Block length selection for smooth extended tapered block bootstrap (SETBB).\label{fig:setbb}](bles_setbb.pdf)
 
 ![Block length selection using BD method.\label{fig:bd}](bles_bd.pdf)
