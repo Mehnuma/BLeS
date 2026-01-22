@@ -1,4 +1,6 @@
 ** In this folder, you will find results on replication from the following sources:
+
+(a) BLeS (Journal of Open Source Software Paper)
 1. Hall-Horowitz-Jing (HHJ) method
 2. Bühlmann-Künsch (BK) method
 3. Corrected Politis-White (cPW) method
@@ -7,3 +9,5 @@
      (a) Original tapered block bootstrap (TBB) by Paparoditis-Politis
      (b) Extended tapered block bootstrap (ETBB) by Shao
      (c) Smooth extended TBB (SETBB) by Gregory et al. 
+
+(b) Replications for the Simulation Section of "A State-of-the-Science Overview of Block Length Selection Methods in Block Bootstrap" by Tabassum and De Brabanter (2006), In review in Statistical Science.
