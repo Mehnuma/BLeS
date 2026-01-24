@@ -97,7 +97,6 @@ elseif strcmp(estimator_type,'one-sided')
         disp('Please supply a threshold value')
         return
     else
-        % s_hat = std(stat);
         scaled_stat = sqrt(n)*(stat-theta_hat)./tao_star;
         boot_stat = sum(scaled_stat < threshold)/B;
     end
@@ -112,16 +111,10 @@ elseif strcmp(estimator_type,'two-sided')
 elseif strcmp(estimator_type,'quantile')
     if isempty(cdf)
         disp('Please supply a CDF value')
-    end
-    if isempty(threshold)
-        disp('Please supply a threshold value')
         return
     else
         T1n = sqrt(n)*(stat-theta_hat)./tao_star;
     end
-    % sorted_stat = sort(T1n);
-    % position = round((n+1)*cdf);
-    % boot_stat = sorted_stat(position);
     boot_stat = quantile(T1n,cdf);
 end
 end
@@ -173,16 +166,25 @@ elseif strcmp(estimator_type,'two-sided')
 elseif strcmp(estimator_type,'quantile')
     if isempty(cdf)
         disp('Please supply a CDF value')
-    end
-    if isempty(threshold)
-        disp('Please supply a threshold value')
         return
     else
         T1n = sqrt(n_ts)*(stat-theta_hat)./tao_star;
     end
-    % sorted_stat = sort(T1n);
-    % position = round((n_ts+1)*cdf);
-    % val = sorted_stat(position);
     val = quantile(T1n,cdf);
 end
+end
+
+% Calculate tao_star (for distributions and quantiles)
+function tao_val = getTao(ts,bl)
+    [n,~] = size(ts);
+    xbar_star = mean(ts);
+    b = floor(n/bl);
+    big_sum = nan(b,1);
+    j=1;
+    for i=1:b
+        big_sum(i) = (sum(ts(j:(j+bl-1)))-(bl*xbar_star)).^2;
+        j=j+bl;
+    end
+    sigma_n_star = sum(big_sum)/(b*bl);
+    tao_val = sqrt(sigma_n_star)+(1/n);
 end
