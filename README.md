@@ -14,6 +14,16 @@ We present a MATLAB and Octave toolbox, `BLeS`, for selecting the block length, 
 
 This toolbox has been tested using different examples from published articles, with the replication scripts available in the `Replication Codes` folder. BLeS is also supported in Octave with the codes placed in the `Octave` folder. Additionally, this repository also contains the codes for the Simulation section in Tabassum and De Brabanter (2026) in the `Replication Codes` folder.
 
+# Installation
+
+Clone the repository and add it to your MATLAB path:
+
+```matlab
+git clone https://github.com/Mehnuma/BLeS.git
+addpath(genpath('BLeS'))
+```
+
+# Citation
 
 # References
 [1] Hall, P., Horowitz, J. L., & Jing, B. Y. (1995). On blocking rules for the bootstrap with dependent data. Biometrika, 82(3), 561-574.
