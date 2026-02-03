@@ -24,7 +24,7 @@ end
 l = round(n^(1/(r+4)));
 m = round(c2*n^(1/3)*l^(2/3));
 if isempty(B)
-    B = 500;
+    B = 3*n;
 end
 %% Optimal Block Length Calculation
 boot_l  = MBB_nppi(ts,statistic,estimator_type,l,  B,theta_hat,threshold,cdf);    % Regular MBB with bl = l
