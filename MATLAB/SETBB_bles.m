@@ -17,7 +17,7 @@ d = size(X,2)-1;
 ell1 = round(n^(1/5));
 m = floor(n^(1/3)*ell1^(2/3));
 ell2 = 2*ell1;
-if isempty(B); B=5*n; end
+if isempty(B); B=1000; end
 
 model = rq(X,Y,quantile);
 beta_hat = model.coefficients;
