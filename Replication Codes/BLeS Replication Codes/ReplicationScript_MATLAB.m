@@ -1,12 +1,12 @@
-% This script contains all the code snippets included in the manuscript titled "BLeS: A MATLAB and Octave Toolbox for Block Length Selection in Block Bootstrap."
+% This script contains the replication codes from various published articles.
 % Authors: Mehnuma Tabassum, Kris De Brabanter
 % Email: mehnuma@iastate.edu
 
 
 %% Bühlmann-Künsch (BK) Method (From Bühlmann and Künsch (1999))
 nsims_bk = 1000;
-data_bk128 = readmatrix('bk_bilinear128_new.csv');
-data_bk512 = readmatrix('bk_bilinear512_new.csv');
+data_bk128 = readmatrix('bk_bilinear128_new.csv'); % Change the model here
+data_bk512 = readmatrix('bk_bilinear512_new.csv'); % Change the model here
 bk_n1 = 128; bk_n2 = 512;
 B_bk = 5000;
 
@@ -62,8 +62,8 @@ end
 
 % Calculate "True" Statistics
 nsims_bk_true = 1000;
-data_bk128_true = readmatrix('bk_bilinear128_truestat_new.csv');
-data_bk512_true = readmatrix('bk_bilinear512_truestat_new.csv');
+data_bk128_true = readmatrix('bk_bilinear128_truestat_new.csv');  % Change the model here
+data_bk512_true = readmatrix('bk_bilinear512_truestat_new.csv');  % Change the model here
 
 true_stat_mean128 = nan(nsims_bk_true,1); true_stat_median128 = nan(nsims_bk_true,1);
 true_stat_mean512 = nan(nsims_bk_true,1); true_stat_median512 = nan(nsims_bk_true,1);
@@ -302,6 +302,8 @@ box on
 set(gca, 'FontName','Arial','FontSize',24, 'LineWidth',3)
 set(gcf,'RendererMode','manual')
 
+
+
 %% Corrected Politis-White (cPW) Method (From Politis and White (2004))
 nsims_cpw = 1000;                        % No. of simulations
 N1 = 200; N2 = 800;                      % Sample sizes
@@ -525,5 +527,36 @@ h1 = histogram(opt_N2R3_SB);
 h1.FaceColor = 'r';
 h1.FaceAlpha = 0.8;
 xlabel('$\hat{b}_{opt, SB}$','interpreter','latex')
+set(gca, 'FontName','Arial','FontSize',24, 'LineWidth',3)
+set(gcf,'RendererMode','manual')
+
+
+
+%% Nonparametric Plugin (NPPI) Method by Lahiri (2007)
+data_nppi = readmatrix('nppi_Ex1.csv'); 
+% Use 'nppi_Ex1.csv' for Model 6.1
+% Use 'nppi_Ex2.csv' for Model 6.2
+% Use 'nppi_Ex3.csv' for Model 6.3
+% Use 'nppi_Ex4.csv' for Model 6.4
+nsims_nppi = 500;
+nppi_n = 125; nppi_index1 = 1;
+l_hat_nppi = nan(nsims_nppi,1); 
+stat_val = nan(nsims_nppi,1); 
+y_nppi = cell(nsims_nppi,1);
+for sim =1:nsims_nppi
+    y_nppi{sim} = data_nppi((nppi_index1:(nppi_index1+nppi_n-1))');
+    nppi_index1 = nppi_index1+nppi_n;
+end
+parfor sim =1:nsims_nppi % Change the functional and the "true" values accordingly
+    [l_hat_nppi(sim), stat_val(sim)] = NPPI_bles(y_nppi{sim},'mean','variance',500,[],[],[]);
+    % [l_hat_nppi(sim), stat_val(sim)] = NPPI_bles(y_nppi{sim},'mean','one-sided',500,7.8960e-04,0,[]);
+    % [l_hat_nppi(sim), stat_val(sim)] = NPPI_bles(y_nppi{sim},'mean','quantile',500,7.8960e-04,[],0.35);
+    % [l_hat_nppi(sim), stat_val(sim)] = NPPI_bles(y_nppi{sim},'mean','quantile',500,7.8960e-04,[],0.8);
+end
+
+h1 = histogram(l_hat_nppi);
+h1.FaceColor = 'g';
+h1.FaceAlpha = 0.5;
+xlabel('$\hat{b}_{opt, NPPI}$','interpreter','latex')
 set(gca, 'FontName','Arial','FontSize',24, 'LineWidth',3)
 set(gcf,'RendererMode','manual')
