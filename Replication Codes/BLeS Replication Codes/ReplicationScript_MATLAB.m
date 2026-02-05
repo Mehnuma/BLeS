@@ -2,6 +2,27 @@
 % Authors: Mehnuma Tabassum, Kris De Brabanter
 % Email: mehnuma@iastate.edu
 
+%% Hall-Horowitz-Jing (HHJ) Method
+data_hhj = readmatrix('nppi_Ex1.csv'); 
+nsims_hhj = 500;
+hhj_n = 125; hhj_index1 = 1;
+l_hat_hhj = nan(nsims_hhj,1); 
+y_hhj = cell(nsims_hhj,1);
+for sim =1:nsims_hhj
+    y_hhj{sim} = data_hhj((hhj_index1:(hhj_index1+hhj_n-1))');
+    hhj_index1 = hhj_index1+hhj_n;
+end
+for sim =1:nsims_hhj 
+    l_hat_hhj(sim) = HHJ_bles(y_hhj{sim},5,30,'mean','variance',500,0,0,[]);
+end
+
+h1 = histogram(l_hat_hhj);
+h1.FaceColor = 'r';
+h1.FaceAlpha = 0.7;
+xlabel('$\hat{b}_{opt, HHJ}$','interpreter','latex')
+set(gca, 'FontName','Arial','FontSize',24, 'LineWidth',3)
+set(gcf,'RendererMode','manual')
+
 
 %% Bühlmann-Künsch (BK) Method (From Bühlmann and Künsch (1999))
 nsims_bk = 1000;
