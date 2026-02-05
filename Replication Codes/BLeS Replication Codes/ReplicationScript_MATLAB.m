@@ -55,12 +55,12 @@ bk_index1 = 1; bk_index2=1;
 for sim =1:nsims_bk
     y128 = data_bk128((bk_index1:(bk_index1+bk_n1-1))');
 
-    bk_lhat_mean128(sim) = BK_method(y128,'mean');    
+    bk_lhat_mean128(sim) = BK_bles(y128,'mean');    
     ssboot_mean128(sim) = sqrt(bk_n1)*MBB_BK(y128,bk_lhat_mean128(sim),'mean',B_bk);
     ssboot_l13_mean128(sim) = sqrt(bk_n1)*MBB_BK(y128,5,'mean',B_bk);
     ssboot_lopt_mean128(sim) = sqrt(bk_n1)*MBB_BK(y128,6,'mean',B_bk);
 
-    bk_lhat_median128(sim) = BK_method(y128,'median');
+    bk_lhat_median128(sim) = BK_bles(y128,'median');
     ssboot_median128(sim) = sqrt(bk_n1)*MBB_BK(y128,bk_lhat_median128(sim),'median',B_bk);
     ssboot_l13_median128(sim) = sqrt(bk_n1)*MBB_BK(y128,5,'median',B_bk);
     ssboot_lopt_median128(sim) = sqrt(bk_n1)*MBB_BK(y128,3,'median',B_bk);
@@ -69,12 +69,12 @@ end
 for sim =1:nsims_bk
     y512 = data_bk512((bk_index2:(bk_index2+bk_n2-1))');
 
-    bk_lhat_mean512(sim) = BK_method(y512,'mean');    
+    bk_lhat_mean512(sim) = BK_bles(y512,'mean');    
     ssboot_mean512(sim) = sqrt(bk_n2)*MBB_BK(y512,bk_lhat_mean512(sim),'mean',B_bk);
     ssboot_l13_mean512(sim) = sqrt(bk_n2)*MBB_BK(y512,8,'mean',B_bk);
     ssboot_lopt_mean512(sim) = sqrt(bk_n2)*MBB_BK(y512,9,'mean',B_bk);
 
-    bk_lhat_median512(sim) = BK_method(y512,'median');
+    bk_lhat_median512(sim) = BK_bles(y512,'median');
     ssboot_median512(sim) = sqrt(bk_n2)*MBB_BK(y512,bk_lhat_median512(sim),'median',B_bk);
     ssboot_l13_median512(sim) = sqrt(bk_n2)*MBB_BK(y512,8,'median',B_bk);
     ssboot_lopt_median512(sim) = sqrt(bk_n2)*MBB_BK(y512,5,'median',B_bk);
@@ -356,13 +356,13 @@ Xt1 = data_N1R1((cpw_index1:(cpw_index1+N1-1))');
 Xt2 = data_N1R2((cpw_index1:(cpw_index1+N1-1))');
 Xt3 = data_N1R3((cpw_index1:(cpw_index1+N1-1))');
 
-opt_N1R1_CB(sim) = cPW_method(Xt1, 'circularBB');
-opt_N1R2_CB(sim) = cPW_method(Xt2, 'circularBB');
-opt_N1R3_CB(sim) = cPW_method(Xt3, 'circularBB');
+opt_N1R1_CB(sim) = cPW_bles(Xt1, 'circularBB');
+opt_N1R2_CB(sim) = cPW_bles(Xt2, 'circularBB');
+opt_N1R3_CB(sim) = cPW_bles(Xt3, 'circularBB');
 
-opt_N1R1_SB(sim) = cPW_method(Xt1, 'stationaryBB');
-opt_N1R2_SB(sim) = cPW_method(Xt2, 'stationaryBB');
-opt_N1R3_SB(sim) = cPW_method(Xt3, 'stationaryBB');
+opt_N1R1_SB(sim) = cPW_bles(Xt1, 'stationaryBB');
+opt_N1R2_SB(sim) = cPW_bles(Xt2, 'stationaryBB');
+opt_N1R3_SB(sim) = cPW_bles(Xt3, 'stationaryBB');
 cpw_index1 = cpw_index1+N1;
 end
 
@@ -371,13 +371,13 @@ Xt1 = data_N2R1((cpw_index2:(cpw_index2+N2-1))');
 Xt2 = data_N2R2((cpw_index2:(cpw_index2+N2-1))');
 Xt3 = data_N2R3((cpw_index2:(cpw_index2+N2-1))');
 
-opt_N2R1_CB(sim) = cPW_method(Xt1, 'circularBB');
-opt_N2R2_CB(sim) = cPW_method(Xt2, 'circularBB');
-opt_N2R3_CB(sim) = cPW_method(Xt3, 'circularBB');
+opt_N2R1_CB(sim) = cPW_bles(Xt1, 'circularBB');
+opt_N2R2_CB(sim) = cPW_bles(Xt2, 'circularBB');
+opt_N2R3_CB(sim) = cPW_bles(Xt3, 'circularBB');
 
-opt_N2R1_SB(sim) = cPW_method(Xt1, 'stationaryBB');
-opt_N2R2_SB(sim) = cPW_method(Xt2, 'stationaryBB');
-opt_N2R3_SB(sim) = cPW_method(Xt3, 'stationaryBB');
+opt_N2R1_SB(sim) = cPW_bles(Xt1, 'stationaryBB');
+opt_N2R2_SB(sim) = cPW_bles(Xt2, 'stationaryBB');
+opt_N2R3_SB(sim) = cPW_bles(Xt3, 'stationaryBB');
 cpw_index2 = cpw_index2+N2;
 end
 
