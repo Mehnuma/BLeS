@@ -1,5 +1,5 @@
 # BLeS Examples
-Below are code snippets for the functions in the `BLeS` toolbox. These examples use the following datasets: `example_dataset.csv`, `qregData.csv`, and `pData.csv`, which are available in the [Replication Codes Folder](Replication Codes/BLeS Replication Codes).
+Below are code snippets for the functions in the `BLeS` toolbox. These examples use the following datasets: `example_dataset.csv`, `qregData.csv`, and `pData.csv`, which are available in the [BLeS Replication Codes Folder](https://github.com/Mehnuma/BLeS/tree/main/Replication%20Codes/BLeS%20Replication%20Codes).
 
 ## HHJ Example
 For the demonstration of the HHJ method, we use the following examples. The first example below estimates the block length for the bootstrap variance estimation of the sample mean using the HHJ method. The second example selects the block length for the one-sided distribution estimation of the sample mean. In both cases, a pilot block length of size 5 and a subsample size of 30 is used, in accordance with Lahiri (2003). The "theta_hat" value was obtained via additional simulations for model (6.1) in Lahiri et al. (2007).
