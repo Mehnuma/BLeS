@@ -8,6 +8,10 @@ function l_hat = TBB_bles(ts,method)
 %        (4) method- TBB or ETBB (Options: ‘regular’ and ‘extended’)
 % Output:
 %        (1) l_hat- Optimal block length selected for the TBB or ETBB method
+% Example:
+%	y_tbb = readmatrix('example_dataset.csv');
+%	tbb_lhat = TBB_bles(y_tbb,'TBB');
+%	etbb_lhat = TBB_bles(y_tbb,'ETBB'); 
 
 [N,~] = size(ts);
 K_N = max(5, ceil(sqrt(log10(N))));

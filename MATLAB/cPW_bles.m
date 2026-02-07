@@ -1,10 +1,14 @@
-function b_hat = cPW_method(ts,bb_method)
+function b_hat = cPW_bles(ts,bb_method)
 % This function implements the Politis-White method of block size selection (Politis & White, 2004) with correction (Patton, Politis, & White, 2009)
 % Input:
 %        (1) ts- Observations from a dependent series
 %        (2) bb_method- Selection of the block bootstrap variant ('Circular' and 'Stationary')
 % Output:
 %        (1) b_hat- Optimal block length selected by the cPW method
+% Example:
+%	y_cpw = readmatrix('example_dataset.csv');
+%	cpw_lhat_cbb = cPW_bles(y_cpw, 'circularBB');
+%	cpw_lhat_sbb = cPW_bles(y_cpw, 'stationaryBB');
 
 [N,~] = size(ts);
 

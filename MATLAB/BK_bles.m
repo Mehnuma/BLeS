@@ -1,10 +1,14 @@
-function l_hat = BK_method(ts,statistic)
+function l_hat = BK_bles(ts,statistic)
 % This function implements the Bühlmann-Künsch (BK) method of block length selection, provided by Bühlmann & Künsch (1999).
 % Input:
 %        (1) ts- The time series/correlated series of observations
 %        (2) statistic- Statistic calculated from the data (mean/median)
 % Output:
 %        (1) l_hat- Optimal block length selected by the BK method
+% Example:
+% 	y_bk = readmatrix('example_dataset.csv');
+%	bk_lhat_mean = BK_bles(y_bk,'mean');
+%	bk_lhat_median = BK_bles(y_bk,'median');
 
 [n,~] = size(ts);
 new_stat = nan(n,1);

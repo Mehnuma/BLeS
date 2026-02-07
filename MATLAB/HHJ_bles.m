@@ -1,4 +1,4 @@
-function opt_l = HHJ_method(ts,l_init,m,statistic,estimator_type,B,theta_hat,threshold,n_iter)
+function opt_l = HHJ_bles(ts,l_init,m,statistic,estimator_type,B,theta_hat,threshold,n_iter)
 % This function implements the Hall-Horowitz-Jing (HHJ) block length selection technique, provided by Hall, Horowitz, and Jing (1995).
 % Input:
 %        (1) ts- The time series/correlated series of observations 
@@ -12,6 +12,11 @@ function opt_l = HHJ_method(ts,l_init,m,statistic,estimator_type,B,theta_hat,thr
 %        (9) n_iter- Number of iterations for the HHJ algorithm
 % Output:
 %        (1) opt_l- Optimal block length selected by the HHJ method
+% Example:
+% 	y_hhj = readmatrix('example_dataset.csv'); 
+% 	hhj_lhat_var = HHJ_bles(y_hhj,5,30,'mean','variance',500,0,0,[]);
+% 	hhj_lhat_dist = HHJ_bles(y_hhj,5,30,'mean','one-sided',500,7.8960e-04,0,[]);
+
 [n,~] = size(ts);
 if strcmp(estimator_type, 'bias') || strcmp(estimator_type, 'variance') 
     k = 3;

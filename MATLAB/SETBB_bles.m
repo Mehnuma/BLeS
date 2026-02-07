@@ -10,6 +10,11 @@ function l_hat = SETBB_bles(X,Y,quantile,boot_variant,B)
 %        (5) B- Number of Monte-Carlo replications
 % Output:
 %        (1) l_hat- Optimal block length selected for the quantile regression (QR) estimator by the SETBB or MBB method
+% Example:
+%	qData = readmatrix('qregData.csv');
+%	X = qdata(:,1:2); Y = qData(:,3);
+%	setbb_lhat = SETBB_bles(X,Y,0.35,'SETBB',500); 
+%	setbb_lhat = SETBB_bles(X,Y,0.85,'SETBB',750); 
 
 %% Initial Parameters
 [n,~] = size(Y);

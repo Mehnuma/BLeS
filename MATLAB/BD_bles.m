@@ -12,6 +12,11 @@ function bopt_BD = BD_bles(ts,p,statistic,method)
 %            'CEMBB': Circular extended moving block bootstrap%        
 % Output:
 %        (1) bopt_BD- Optimal block length selected by the BD method
+% Example:
+%	pData = readmatrix('pData.csv');
+% 	y_bd = pData(1:200,1);
+%	bd_lhat_overall = BD_bles(y_bd,6,'overall mean','EMBB');
+%	bd_lhat_seasonal = BD_bles(y_bd,6,'seasonal mean','GSBB');
 
 if strcmp(statistic,'overall mean')
     bopt_BD = BD_overallMean(ts,p,method);
@@ -23,8 +28,8 @@ end
 end
 function bopt_overallMean = BD_overallMean(ts,p,method)   
     n = length(ts);
-    Kn_min  = floor(n^(1/4))+2*p;
-    Kn_max = floor(n^(1/2))+2*p;
+    Kn_min  = floor(n^(1/4));
+    Kn_max = floor(n^(1/2));
     Ln = round(4*n^(1/4));
     G = 0;
     sumG = nan(Kn_max-Kn_min+1,1);

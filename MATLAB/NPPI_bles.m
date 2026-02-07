@@ -1,4 +1,4 @@
-function [opt_l, boot_l] = NPPI_method(ts,statistic,estimator_type,B,theta_hat,threshold,cdf)
+function [opt_l, boot_l] = NPPI_bles(ts,statistic,estimator_type,B,theta_hat,threshold,cdf)
 % This function implements the nonparametric plugin (NPPI) method by Lahiri, Furukawa, and Lee (2007).
 % Input:
 %        (1) ts: Dependent series data
@@ -11,6 +11,10 @@ function [opt_l, boot_l] = NPPI_method(ts,statistic,estimator_type,B,theta_hat,t
 % Output:
 %        (1) opt_l: Optimal block length from the NPPI method
 %        (2) boot_l: Values of the desired bootstrapped functional (e.g., variance of the sample mean)
+% Example:
+%	y_nppi = readmatrix('example_dataset.csv');
+%	[nppi_lhat_var, nppi_stat_val] = NPPI_bles(y_nppi,'mean','variance',500,[],[],[]);
+%	[nppi_lhat_var, nppi_stat_val] = NPPI_bles(y_nppi,'mean','quantile',500,7.8960e-04,[],0.35);
 
 %% Set Parameter Values
 if strcmp(estimator_type, 'bias') || strcmp(estimator_type, 'variance')
