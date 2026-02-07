@@ -12,4 +12,4 @@ Please follow the instructions below to install `BLeS` from a MATLAB toolbox ins
 + The toolbox can be managed by clicking `Add-Ons` > `Manage Add-Ons`.
 
 # Octave Usage
-To use the `BLeS` toolbox in `Octave`, please add the [Octave Folder](https://github.com/Mehnuma/BLeS/tree/main/Octave) to the `Octave' working directory on your local machine. 
+To use the `BLeS` toolbox in Octave, please download and add the [Octave Folder](https://github.com/Mehnuma/BLeS/tree/main/Octave) to the Octave working directory on your local machine. 
