@@ -1,6 +1,6 @@
 # BLeS: A MATLAB and Octave Toolbox for Block Length Selection in Block Bootstrap.
 <div align="justify">
-We present a MATLAB and Octave toolbox, `BLeS`, for selecting the block length, the main tuning parameter in the block bootstrap (a resampling method for estimating the empirical distribution of dependent data). This package enables users to select block lengths using various methods provided by different scholars for several well-known block bootstrap approaches. This toolbox offers the following implementations for block length selection:
+We present a MATLAB and Octave toolbox, <code>BLeS</code>, for selecting the block length, the main tuning parameter in the block bootstrap (a resampling method for estimating the empirical distribution of dependent data). This package enables users to select block lengths using various methods provided by different scholars for several well-known block bootstrap approaches. This toolbox offers the following implementations for block length selection:
      
 1. Hall-Horowitz-Jing (HHJ) method
 2. Bühlmann-Künsch (BK) method
@@ -23,7 +23,22 @@ git clone https://github.com/Mehnuma/BLeS.git
 addpath(genpath('BLeS'))
 ```
 
+Alternatively, you can use the MATLAB toolbox installer file from the [Installation and Documentation Folder](https://github.com/Mehnuma/BLeS/tree/main/Installation%20and%20Documentation).
+
 # Citation
+[![DOI](https://zenodo.org/badge/1086506706.svg)](https://doi.org/10.5281/zenodo.18408822)
+
+Please cite the toolbox as follows: Tabassum, M., & De Brabanter, K. (2026). BLeS (Version 1.0) [Computer software]. https://github.com/Mehnuma/BLeS
+
+Bibtex: 
+@software{Tabassum_BLeS_2026,
+author = {Tabassum, Mehnuma and De Brabanter, Kris},
+month = jan,
+title = {{BLeS}},
+url = {https://github.com/Mehnuma/BLeS},
+version = {1.0},
+year = {2026}
+}
 
 # References
 [1] Hall, P., Horowitz, J. L., & Jing, B. Y. (1995). On blocking rules for the bootstrap with dependent data. Biometrika, 82(3), 561-574.
