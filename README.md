@@ -59,5 +59,5 @@ year = {2026}
 
 [9] Bertail, P., & Dudek, A. E. (2024). Optimal choice of bootstrap block length for periodically correlated time series. Bernoulli, 30(3), 2521-2545.
 
-[10] Tabassum, M., & De Brabanter, K. (2026).  A State-of-the-Science Overview of Block Length Selection Methods in Block Bootstrap. Statistical Science, In review.
+[10] Tabassum, M., & De Brabanter, K. (2026).  A State-of-the-Science Overview of Block Length Selection Methods in Block Bootstrap. Statistical Science, Accepted.
 
