@@ -5,7 +5,7 @@ function l_hat = TBB_bles(ts,method)
 %        (1) ts- The time series/correlated series of observations 
 %        (2) statistic- A quantity directly calculated from the data
 %        (3) estimator_type- Bootstrapped functional (Options: ‘variance’ and ‘distribution’)
-%        (4) method- TBB or ETBB (Options: ‘regular’ and ‘extended’)
+%        (4) method- TBB or ETBB (Options: ‘TBB’ and ‘ETBB’)
 % Output:
 %        (1) l_hat- Optimal block length selected for the TBB or ETBB method
 % Example:
